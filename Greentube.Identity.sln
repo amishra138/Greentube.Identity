@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{8282B51B-8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greentube.Identity.API.UnitTest", "Greentube.Identity.API.UnitTest\Greentube.Identity.API.UnitTest.csproj", "{A53F4FF7-6DEA-4FC9-A165-1D50D97EE146}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greentube.Identity.API.Handler", "Greentube.Identity.API.Handler\Greentube.Identity.API.Handler.csproj", "{FD0AED06-FB3D-4574-A326-05D5CFE63315}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{A53F4FF7-6DEA-4FC9-A165-1D50D97EE146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A53F4FF7-6DEA-4FC9-A165-1D50D97EE146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A53F4FF7-6DEA-4FC9-A165-1D50D97EE146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD0AED06-FB3D-4574-A326-05D5CFE63315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD0AED06-FB3D-4574-A326-05D5CFE63315}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD0AED06-FB3D-4574-A326-05D5CFE63315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD0AED06-FB3D-4574-A326-05D5CFE63315}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

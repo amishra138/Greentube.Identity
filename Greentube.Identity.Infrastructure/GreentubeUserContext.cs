@@ -1,5 +1,4 @@
-﻿using Greentube.Identity.Infrastructure.EntityConfigurations;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Greentube.Identity.Infrastructure
@@ -13,7 +12,6 @@ namespace Greentube.Identity.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfiguration(new UserEntityConfiguration());
             base.OnModelCreating(builder);
         }
     }

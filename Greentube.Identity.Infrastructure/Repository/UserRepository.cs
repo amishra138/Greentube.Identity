@@ -1,5 +1,4 @@
-﻿using Greentube.Identity.Domain.Entities;
-using Greentube.Identity.Domain.Interfaces;
+﻿using Greentube.Identity.Domain.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -13,50 +12,45 @@ namespace Greentube.Identity.Infrastructure.Repository
     /// </summary>
     public class UserRepository : IUserRepository
     {
-        private bool _disposed;
-        private readonly UserManager<UserEntity> _userManager;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public UserRepository(UserManager<UserEntity> userManager)
+        public UserRepository(UserManager<IdentityUser> userManager)
         {
             _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
         }
 
-        public Task<IEnumerable<UserEntity>> GetAll()
+        public Task<IEnumerable<IdentityUser>> GetAll()
         {
             //just to wrap into a task
             return Task.FromResult(_userManager.Users.AsEnumerable());
         }
 
-        public Task<UserEntity> GetByEmailAsync(string email)
+        public Task<IdentityUser> GetByEmailAsync(string email)
         {
             return _userManager.FindByEmailAsync(email);
         }
 
-        public async Task<bool> ResetPassword(UserEntity user, string token, string newPassword)
+        public async Task<bool> ResetPassword(IdentityUser user, string token, string newPassword)
         {
             var result = await _userManager.ResetPasswordAsync(user, token, newPassword);
 
             return result == null ? false : result.Succeeded;
         }
-
-        public void Dispose()
+        public Task<string> GeneratePasswordResetTokenAsync(IdentityUser user)
         {
-            Dispose(true);
-
-            //To inform GC that this object was cleaned up fully, so that it wouldn't waste time cleaning it again
-            GC.SuppressFinalize(this);
+            return _userManager.GeneratePasswordResetTokenAsync(user);
         }
 
-        protected virtual void Dispose(bool disposing)
+        public Task<bool> VerifyUserTokenAsync(IdentityUser user, string token)
         {
-            if (!_disposed)
-            {
-                if (disposing)
-                {
-                    _userManager.Dispose();
-                }
-            }
-            _disposed = true;
+            return _userManager.VerifyUserTokenAsync(user, "Default", "ResetPassword", token);
+        }
+
+        public async Task<bool> ResetPasswordAsync(IdentityUser user, string token, string newPassword)
+        {
+            var result = await _userManager.ResetPasswordAsync(user, token, newPassword);
+
+            return result == null ? false : result.Succeeded;
         }
     }
 }

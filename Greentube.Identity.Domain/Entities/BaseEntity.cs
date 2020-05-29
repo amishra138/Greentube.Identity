@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 
 namespace Greentube.Identity.Domain.Entities
 {
     /// <summary>
     /// To be used as a base class for all the entities
     /// </summary>
-    public abstract class BaseEntity 
+    public abstract class BaseEntity  : IdentityUser
     {
         public Guid Id { get; set; }
 

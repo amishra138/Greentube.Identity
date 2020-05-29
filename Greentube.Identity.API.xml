@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Greentube.Identity.API</name>
+    </assembly>
+    <members>
+        <member name="T:Greentube.Identity.API.Controllers.UserController">
+            <summary>
+            User Identity controller
+            </summary>
+        </member>
+        <member name="M:Greentube.Identity.API.Controllers.UserController.GetAll">
+            <summary>
+            To get all registered users
+            </summary>
+            <returns>Return list of users</returns>
+        </member>
+        <member name="M:Greentube.Identity.API.Controllers.UserController.ForgotPassword(Greentube.Identity.Domain.Requests.ForgotPasswordRequest)">
+            <summary>
+            To generate a forgot password link, which will be sent on user's registered email address
+            </summary>
+            <param name="request">User email</param>
+            <returns>Password reset link</returns>
+        </member>
+        <member name="M:Greentube.Identity.API.Controllers.UserController.TempLogin(System.String,System.String)">
+            <summary>
+            To reset password via password reset link sent on registered email
+            </summary>
+            <param name="email">User email</param>
+            <param name="token">Password reset token</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
