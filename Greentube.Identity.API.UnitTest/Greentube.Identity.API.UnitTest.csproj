@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Greentube.Identity.API.Handler\Greentube.Identity.API.Handler.csproj" />
+    <ProjectReference Include="..\Greentube.Identity.API\Greentube.Identity.API.csproj" />
     <ProjectReference Include="..\Greentube.Identity.Domain\Greentube.Identity.Domain.csproj" />
   </ItemGroup>
 

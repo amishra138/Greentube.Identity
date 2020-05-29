@@ -1,9 +1,11 @@
 using Greentube.Identity.API.Handler.Queries;
 using Greentube.Identity.API.Handler.RequestHandlers;
+using Greentube.Identity.Domain.Interfaces;
 using Greentube.Identity.Domain.Requests;
 using Greentube.Identity.Infrastructure;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
+using System.IO;
 
 namespace Greentube.Identity.API
 {
@@ -39,6 +42,8 @@ namespace Greentube.Identity.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Greentube Identity API", Version = "v1", Description = "A sample API to manage user identity" });
             });
 
+            services.AddAuthentication();
+
             //AddIdentity registers the services
             services
                 .AddIdentity<IdentityUser, IdentityRole>(config =>
@@ -53,8 +58,11 @@ namespace Greentube.Identity.API
             services.Configure<DataProtectionTokenProviderOptions>(opt =>
             {
                 opt.Name = "Default";
-                opt.TokenLifespan = TimeSpan.FromMinutes(Configuration.GetValue<int>("LinkExpiryTimeInMinutes"));
+                opt.TokenLifespan = TimeSpan.FromHours(Configuration.GetValue<int>("LinkExpiryTimeInHours"));
             });
+
+            services.AddDataProtection()
+                    .PersistKeysToFileSystem(new DirectoryInfo(@"c:\temp-keys\"));
 
             services.AddControllers();
 
@@ -87,7 +95,11 @@ namespace Greentube.Identity.API
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Greentube Identity API V1");
             });
 
+            app.UseHttpsRedirection();
+
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Greentube.Identity.API.Handler.Queries
+namespace Greentube.Identity.Domain.Interfaces
 {
     /// <summary>
     /// To query over system users
