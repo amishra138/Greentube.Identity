@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greentube.Identity.API", "Greentube.Identity.API\Greentube.Identity.API.csproj", "{1DE02826-661D-4506-92B1-6350F4451947}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greentube.Identity.Domain", "Greentube.Identity.Domain\Greentube.Identity.Domain.csproj", "{5E584E99-CC16-4C2C-A236-A2E93D764575}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greentube.Identity.Infrastructure", "Greentube.Identity.Infrastructure\Greentube.Identity.Infrastructure.csproj", "{24BEE97B-DE13-41E1-A10E-C848FAFE0638}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DE02826-661D-4506-92B1-6350F4451947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DE02826-661D-4506-92B1-6350F4451947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DE02826-661D-4506-92B1-6350F4451947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DE02826-661D-4506-92B1-6350F4451947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E584E99-CC16-4C2C-A236-A2E93D764575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E584E99-CC16-4C2C-A236-A2E93D764575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E584E99-CC16-4C2C-A236-A2E93D764575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E584E99-CC16-4C2C-A236-A2E93D764575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24BEE97B-DE13-41E1-A10E-C848FAFE0638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24BEE97B-DE13-41E1-A10E-C848FAFE0638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24BEE97B-DE13-41E1-A10E-C848FAFE0638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24BEE97B-DE13-41E1-A10E-C848FAFE0638}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A44CA0BB-5361-4397-BF89-D0534BD9C9C3}
+	EndGlobalSection
+EndGlobal
